@@ -10,9 +10,6 @@
 
 <!-- TODO: Update to match your project's benefits/features. Git emojis work great here. -->
 
-- :star2: Quickly set up your informatica cloud SDK Environment :star2:
-- :star2: Build awesome business-specific solutions with the infapy SDK :star2:
-- :star2: Python 3.7+ :star2:
 - :star2: Getting started is as easy as, pip install infapy :star2:
 
 
