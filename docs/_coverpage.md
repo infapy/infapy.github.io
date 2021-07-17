@@ -1,6 +1,6 @@
 <!-- TODO: Update title -->
 <h1 id="cover-heading">
-  DocsifyJS Template
+  InfaPy Template
 </h1>
 
 [![GitHub tags](https://img.shields.io/github/tag/MichaelCurrin/docsify-js-template.svg)](https://GitHub.com/MichaelCurrin/docsify-js-template/tags/) <!-- TODO: Update username and repo name -->
