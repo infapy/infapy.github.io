@@ -1,22 +1,19 @@
 <!-- TODO: Update title -->
 <h1 id="cover-heading">
-  InfaPy Template
+  InfaPy Documentation
 </h1>
 
-[![GitHub tags](https://img.shields.io/github/tag/MichaelCurrin/docsify-js-template.svg)](https://GitHub.com/MichaelCurrin/docsify-js-template/tags/) <!-- TODO: Update username and repo name -->
+[![GitHub tags](https://img.shields.io/badge/infapy-1.0.1-brightgreen)](https://github.com/infapy/infapy) <!-- TODO: Update username and repo name -->
 
->  Starter template for a markdown-based docs site <!-- TODO: Replace with your description -->
+>  Documentation Guide for Informatica Cloud Python SDK <!-- TODO: Replace with your description -->
 
 
 <!-- TODO: Update to match your project's benefits/features. Git emojis work great here. -->
 
-- :hourglass_flowing_sand: Quickly set up an elegant, responsive site
-- :open_file_folder: Use your markdown docs as content
-- :sparkles: No compilation step and no templating syntax to learn
-- :nut_and_bolt: Built on [DocsifyJS](https://docsify.js.org/)
-- :pushpin: The library loads in the browser - no local dependencies
-- :cloud: Serve locally and on GitHub Pages or Netlify
+- :star2: Quickly set up your informatica cloud SDK Environment :star2:
+- :star2: Build awesome business-specific solutions with the infapy SDK :star2:
+- :star2: Python 3.7+ :star2:
+- :star2: Getting started is as easy as, pip install infapy :star2:
 
 
-[Use this template](https://github.com/MichaelCurrin/docsify-js-template/generate) <!-- TODO: Remove on your copy of this template.-->
 [Get Started](#docsifyjs-template) <!-- TODO: Use ID of your homepage heading -->
