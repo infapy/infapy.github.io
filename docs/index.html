@@ -35,20 +35,28 @@
         var repo = 'https://github.com/infapy/infapy.github.io'; // TODO: Update.
 
         window.$docsify = {
-            name: 'DocsifyJS Template', // TODO: Update.
-            repo: repo,
+            name: 'TABLE OF CONTENTS', // TODO: Update.
             auto2top: true,
             coverpage: true,
             loadSidebar: true,
             subMaxLevel: 2,
-
-            plugins: [
-                EditOnGithubPlugin.create(
-                    repo + '/blob/master/docs/',
-                    null,
-                    '📝 Edit on GitHub',
-                )
-            ],
+            search: {
+                noData: {
+                    '/es/': '¡No hay resultados!',
+                    '/de-de/': 'Keine Ergebnisse!',
+                    '/ru-ru/': 'Никаких результатов!',
+                    '/zh-cn/': '没有结果!',
+                    '/': 'No results!',
+                },
+                paths: 'auto',
+                placeholder: {
+                    '/es/': 'Buscar',
+                    '/de-de/': 'Suche',
+                    '/ru-ru/': 'Поиск',
+                    '/zh-cn/': '搜索',
+                    '/': 'Search',
+                },
+            },
         }
 
     </script>
@@ -58,6 +66,7 @@
 
     <!-- Syntax highlighting -->
     <!-- TODO Add prism-bash, prism-python, prism-javascript etc. as separate items to load highlighting for that language -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
 
 </body>
