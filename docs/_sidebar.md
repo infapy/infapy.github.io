@@ -11,4 +11,4 @@
 
     - [admin](./myDocs/DevDocs/admin/index)
     - [cdi](./myDocs/DevDocs/cdi/index)
-    - [monitor](./myDocs/DevDocs/mon/index)
+    - [monitor](./myDocs/DevDocs/monitor/index)
