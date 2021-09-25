@@ -1,151 +1,196 @@
-# DocsifyJS Template 📒 🕸
-> Starter template for a markdown-based docs site
+# infapy - The Informatica Cloud SDK for Python
 
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/docsify-js-template)](https://github.com/MichaelCurrin/docsify-js-template/tags/?include_prereleases&sort=semver)
-[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
+[![Version][]][1]
 
-[![Made with latest Docsify](https://img.shields.io/npm/v/docsify/latest?label=docsify)](https://docsify.js.org/)
-[![Hosted with GH Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
+Infapy is the Informatica Intelligent Cloud Services Software
+Development Kit (SDK) for Python, which allows Python developers to
+write software that makes use of services like Informatica CDI,
+Informatica Cloud Administrator, Informatica Cloud Monitor, Informatica
+CAI etc. You can find the latest, most up to date, documentation here at our
+[doc site][] , including a list of services that are supported.
 
+## Getting Started
 
-## Preview
-
-<div align="center">
-    <a href="https://michaelcurrin.github.io/docsify-js-template/">
-        <img src="/sample.png" alt="Sample screenshot" title="Sample screenshot" width="400" />
-    </a>
-</div>
-
-<br>
-
-<div align="center">
-
-[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-blue?style=for-the-badge)](https://michaelcurrin.github.io/docsify-js-template/)
-
-[![Use this template](https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge)](https://github.com/MichaelCurrin/docsify-js-template/generate)
-
-</div>
-
-
-## Features
-
-- 🏭 Template for a SPA modern docs site.
-- 📗 Use your awesome project's _existing_ markdown files.
-- 🤩 Light on code – just add a single HTML file and optionally add cover page and navbar config.
-- 🚀 Easy to host as a static site on GitHub Pages. No build step needed.
-
-
-## Purpose
-> How to use this project
-
-- Create a **new repo** from the template and host it on GitHub Pages immediately. This is good for trying out Docsify or building a site project from scratch.
-- Use this project as a **base** - follow instructions to download just the necessary files to your _existing_ repo's `docs` directory
-- View the **live** demo site to see what you'll get.
-
-For more info on Docsify, see my [DocsifyJS Tutorial][]. That covers intro to DocsifyJS, including installation, running and configuration. If you look at the repo, that has has more content and configuration than this relatively plain template site.
-
-[DocsifyJS Tutorial]: https://michaelcurrin.github.io/docsify-js-tutorial/#/
-
-
-## How to use Docsify in your projects
-
-### Copy files
-
-Use one of the approaches below to setup Docsify in your own project.
-
-#### A. Use this template
-
-Create a _new_ forked project based on this template  by clicking the button below. You'll get a fork in your own repo.
-
-[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f)](https://github.com/MichaelCurrin/docsify-js-template/generate)
-
-You could start adding code outside of the _docs_ directory, however this project is intended as a standalone docs site which can be configured for experimentation and used as reference.
-
-#### B. Add Docsify to an existing project's docs directory
-
-This will copy the contents of the docs directory from Github to the current folder - ideal if there is an existing project and you want to add to _Docsify_ it.
-
-1. Ensure you have `curl` command installed. Or use `wget`.
-2. Navigate to your project's `docs` folder.
-    ```sh
-    cd my-project/docs
-    ```
-3. Download necessary files in the template [docs](/docs) directory to your project using this two-line command. (The `-O` flag will save the files locally, keeping the original filenames.)
-    ```sh
-    REPO_DOCS='https://raw.githubusercontent.com/MichaelCurrin/docsify-js-template/master/docs/'
-    curl $REPO_DOCS\{_coverpage.md,_sidebar.md,.nojekyll,index.html,README.md\} -O
-    ```
-
-### Customize
-
-You can use your IDE to do find and replace across files.
-
-Use the convenient [replace.sh](/replace.sh) script in this repo to replace the template's values with your own.
-
-
-1. Find the script.
-    - If you used the template button, you've already got it.
-    - If adding content to your existing project's docs, copy script to your project **root** (not docs directory)
-        ```sh
-        curl 'https://raw.githubusercontent.com/MichaelCurrin/docsify-js-template/master/replace.sh' -O
-        chmod +x ./replace.sh
-        ```
-2. Modify the `MY_` values then run this script to replace the template's value with your own.
-3. Run the script from the **project root** against yours docs directory.
-   ```sh
-   ./replace.sh
-   ```
-4. The script can be deleted after you use it.
-
-Now complete any remaining TODO items in the files.
-
-### Use template readme
-
-If you clicked _Use this template_, followed the customize steps above, then the last thing to do is replace the project's README.md file with the template one.
-
-```sh
-mv README.template.md README.md
+``` sh
+$ pip install infapy
 ```
 
-Then customize README.md as your own project.
+### Using Infapy
 
+After installing infapy
 
-## Set up and run
+``` python
+>>> import infapy
+>>> infapy.encrypt()
+Enter your user name: myInfaUser
+Enter your password: myInfaPasswd
+  infa_access_key_id = gAAAAABhT2AUGrFWcXKs0-hCER85DEqHZh2ClRI0xc0gjOtFcWi_1esa9AkZt4k58Y5r2yEVl3sUF9oezTGE1tyF2knFXUX3Og==
+  infa_secret_access_key = gAAAAABhT2AUZ70m68HbSX2Lc3Xa-VQjObWUi2wCSXTiXMtLIVapDxrfKNS5bBffu1N334jmqql7LYer_r-mcjj4EwoS8U44Xg==
+```
 
-### Remote use
+Next, set up credentials (in e.g. `~/.infa/credentials`):
+For Windows, set it up in C:\Users\userName\.infa\credentials
 
-Whatever approach you use to set up a `docs` directory, you can use your own project or a forked template and serve your site on platform like  GiHhub Pages or Netlify.
+``` ini
+[default]
+infa_access_key_id = YOUR_KEY
+infa_secret_access_key = YOUR_SECRET
 
-This template still works fine as a standalone online demo of _Docsify_ that you can tweak. In a real project, you'd add your code at the repo root, outside of `docs`. Or you could move your docs site to the repo root on the `gh-pages` branch for GH Pages.
+[dev]
+infa_access_key_id = YOUR_KEY
+infa_secret_access_key = YOUR_SECRET
+```
 
-### Serve locally
+Then, set up a default region (in e.g. `~/.infa/config`):
+For Windows, set it up in C:\Users\userName\.infa\config
 
-Follow this [gist](https://gist.github.com/MichaelCurrin/4c8060dcc9d8841f842eeebc7a1436d8) so you can view the docs site on a local webserver.
+``` ini
+[default]
+region = us
 
-Go to my [DocsifyJS Tutorial - Serve locally](https://michaelcurrin.github.io/docsify-js-tutorial/#/?id=serve-a-docsify-site-locally) for more info on what DocsifyJS is and how to use it.
+[dev]
+region = em
+```
 
+Then, from a Python interpreter:
 
-## Related projects
+``` python
+>>> import infapy
+>>> infaHandler = infapy.connect()
+or
+>>> infaHandler = infapy.connect(profile="dev")
+>>> v3 = infaHandler.v3()
+>>> securityLogs = v3.getSecurityLogs().getSecurityLogsForLastOneDay()
+>>> print(securityLogs)
+```
 
-A template using Docsify Themeable. It Docsify site easier to use and prettier (in opinion) and supports a theme system that is more advanced than that in Docsify.
+## Getting Help
 
-[![MichaelCurrin - docsify-themeable-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=docsify-themeable-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/docsify-themeable-quickstart)
+We use GitHub issues for tracking bugs and feature requests and might
+have limited bandwidth to address them. Please use these community
+resources for getting help:
 
-A template for Vue-based docs site. Except that it uses VuePress to render a static site (better for SEO) rather than as a Single-Page Application.
- 
-- [![MichaelCurrin - vuepress-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vuepress-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/vuepress-quickstart)
+-   Ask a question on [Stack Overflow][] and tag it with [infapy][]
+-   If it turns out that you may have found a bug, please [open an
+    issue][]
 
-A template for a Vue-based app.
+## Contributing
 
-- [![MichaelCurrin - vue-quickstart](https://img.shields.io/static/v1?label=MichaelCurrin&message=vue-quickstart&color=blue&logo=github)](https://github.com/MichaelCurrin/vue-quickstart)
+We value feedback and contributions from our community. Whether it's a
+bug report, new feature, correction, or additional documentation, we
+welcome your issues and pull requests.
 
+## Maintenance and Support for SDK Major Versions
 
-## License
+Infapy was made generally available on 25-Sep-2021 and is currently in
+the full support phase of the availability life cycle.
 
-Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin).
+## More Resources
 
-- You can modify and reuse this project.
-- Please link back to the original repo somewhere in your project if you use this in any way.
-- Including an original license copy.
-    - If you add content from [docs](/docs) to your repo (or click _Use this template_) and then modify for your own needs so your copy is no longer a template, then you don't need to include a license.
-    - If you do fork this repo then use it as your own _template_, then this project's license and copyright notice must be included with the software. [source](https://choosealicense.com/licenses/#mit). Copy `LICENSE` to `LICENSE-source` and then update your copy of `LICENSE` with your own details.
+-   [License][]
+
+  [Version]: https://img.shields.io/badge/infapy-v1.0.7-brightgreen
+  [1]: https://pypi.org/project/infapy/
+  [doc site]: https://infapy.github.io
+  [Stack Overflow]: https://stackoverflow.com/
+  [infapy]: https://stackoverflow.com/questions/tagged/infapy
+  [open an issue]: https://github.com/infapy/infapy/issues/new
+  [License]: https://github.com/infapy/infapy/blob/main/LICENSE
+# infapy - The Informatica Cloud SDK for Python
+
+[![Version][]][1]
+
+Infapy is the Informatica Intelligent Cloud Services Software
+Development Kit (SDK) for Python, which allows Python developers to
+write software that makes use of services like Informatica CDI,
+Informatica Cloud Administrator, Informatica Cloud Monitor, Informatica
+CAI etc. You can find the latest, most up to date, documentation here at our
+[doc site][] , including a list of services that are supported.
+
+## Getting Started
+
+``` sh
+$ pip install infapy
+```
+
+### Using Infapy
+
+After installing infapy
+
+``` python
+>>> import infapy
+>>> infapy.encrypt()
+Enter your user name: myInfaUser
+Enter your password: myInfaPasswd
+  infa_access_key_id = gAAAAABhT2AUGrFWcXKs0-hCER85DEqHZh2ClRI0xc0gjOtFcWi_1esa9AkZt4k58Y5r2yEVl3sUF9oezTGE1tyF2knFXUX3Og==
+  infa_secret_access_key = gAAAAABhT2AUZ70m68HbSX2Lc3Xa-VQjObWUi2wCSXTiXMtLIVapDxrfKNS5bBffu1N334jmqql7LYer_r-mcjj4EwoS8U44Xg==
+```
+
+Next, set up credentials (in e.g. `~/.infa/credentials`):
+For Windows, set it up in C:\Users\userName\.infa\credentials
+
+``` ini
+[default]
+infa_access_key_id = YOUR_KEY
+infa_secret_access_key = YOUR_SECRET
+
+[dev]
+infa_access_key_id = YOUR_KEY
+infa_secret_access_key = YOUR_SECRET
+```
+
+Then, set up a default region (in e.g. `~/.infa/config`):
+For Windows, set it up in C:\Users\userName\.infa\config
+
+``` ini
+[default]
+region = us
+
+[dev]
+region = em
+```
+
+Then, from a Python interpreter:
+
+``` python
+>>> import infapy
+>>> infaHandler = infapy.connect()
+or
+>>> infaHandler = infapy.connect(profile="dev")
+>>> v3 = infaHandler.v3()
+>>> securityLogs = v3.getSecurityLogs().getSecurityLogsForLastOneDay()
+>>> print(securityLogs)
+```
+
+## Getting Help
+
+We use GitHub issues for tracking bugs and feature requests and might
+have limited bandwidth to address them. Please use these community
+resources for getting help:
+
+-   Ask a question on [Stack Overflow][] and tag it with [infapy][]
+-   If it turns out that you may have found a bug, please [open an
+    issue][]
+
+## Contributing
+
+We value feedback and contributions from our community. Whether it's a
+bug report, new feature, correction, or additional documentation, we
+welcome your issues and pull requests.
+
+## Maintenance and Support for SDK Major Versions
+
+Infapy was made generally available on 25-Sep-2021 and is currently in
+the full support phase of the availability life cycle.
+
+## More Resources
+
+-   [License][]
+
+  [Version]: https://img.shields.io/badge/infapy-v1.0.7-brightgreen
+  [1]: https://pypi.org/project/infapy/
+  [doc site]: https://infapy.github.io
+  [Stack Overflow]: https://stackoverflow.com/
+  [infapy]: https://stackoverflow.com/questions/tagged/infapy
+  [open an issue]: https://github.com/infapy/infapy/issues/new
+  [License]: https://github.com/infapy/infapy/blob/main/LICEN
