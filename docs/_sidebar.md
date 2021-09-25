@@ -36,7 +36,7 @@
 
 - Business Use Cases
 
-    - [Auto Code Migration](./myDocs/DevDocs/monitor/index)
-    - [Triggering a MTT](./myDocs/DevDocs/monitor/index)
-    - [Agent Services](./myDocs/DevDocs/monitor/index)
+    - [Auto Code Migration](./myDocs/DevDocs/business/autoCodeMigration/index)
+    - [Triggering a MTT](./myDocs/DevDocs/business/startMTT/index)
+    - [Agent Services](./myDocs/DevDocs/agentServices/index)
     
