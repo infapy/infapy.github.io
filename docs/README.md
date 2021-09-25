@@ -6,7 +6,7 @@ Infapy is the Informatica Intelligent Cloud Services Software
 Development Kit (SDK) for Python, which allows Python developers to
 write software that makes use of services like Informatica CDI,
 Informatica Cloud Administrator, Informatica Cloud Monitor, Informatica
-CAI etc. You can find the latest, most up to date, documentation at our
+CAI etc. You can find the latest, most up to date, documentation here at our
 [doc site][] , including a list of services that are supported.
 
 ## Getting Started
