@@ -35,13 +35,13 @@
         var repo = 'https://github.com/infapy/infapy.github.io'; // TODO: Update.
 
         window.$docsify = {
+            requestHeaders: {
+                    'cache-control': 'max-age=0',
+            },
             name: 'TABLE OF CONTENTS', // TODO: Update.
             auto2top: true,
             coverpage: true,
             loadSidebar: true,
-            requestHeaders: {
-                    'cache-control': 'max-age=0',
-            },
             subMaxLevel: 2,
             search: {
                 noData: {
