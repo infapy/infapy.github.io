@@ -21,6 +21,7 @@ For More Information on support values for object types, read the product docume
 
 ```python
 import infapy
+infapy.setFileLogger(name="test",level="DEBUG")
 
 # create infa handler
 infaHandler = infapy.connect()
@@ -40,6 +41,7 @@ print(lookup)
 
 ```python
 import infapy
+infapy.setFileLogger(name="test",level="DEBUG")
 
 # create infa handler
 infaHandler = infapy.connect()
@@ -59,6 +61,7 @@ print(lookup)
 
 ```python
 import infapy
+infapy.setFileLogger(name="test",level="DEBUG")
 
 # create infa handler
 infaHandler = infapy.connect()
