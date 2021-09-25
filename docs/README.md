@@ -1,10 +1,4 @@
-<!-- TODO: Update with your values. -->
-<h1 id="doc-heading">
-  InfaPy Documentation
-</h1>
-> Starter template for a markdown-based docs site
-
- # infapy - The Informatica Cloud SDK for Python
+# infapy - The Informatica Cloud SDK for Python
 
 [![Version][]][1]
 
