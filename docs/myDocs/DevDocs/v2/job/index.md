@@ -1,61 +1,86 @@
-<!-- TODO: Update with your values. -->
-<h1 id="getting-started-heading">
-  Getting Started
-</h1>
-> Starter template for a markdown-based docs site
+# Job
 
- <!-- TODO: Update repo links and change license type if needed. -->
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/docsify-js-template.svg)](https://GitHub.com/MichaelCurrin/docsify-js-template/tags/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/MichaelCurrin/docsify-js-template/blob/master/README#license)
+Use Job resource to start or stop a task based on ID or name. You can also retrieve job completion status.
 
-[![Made with latest Docsify](https://img.shields.io/npm/v/docsify/latest?label=docsify)](https://docsify.js.org/)
+## Function: startJob()
 
+startJob() starts Data Integration Jobs based on the JSON body specification.
 
-<!-- TODO: You can delete the About and Create a Docsify site sections if you create a new project from this template -->
+>        Args:
+>            body (dict): JSON body for POST request.
+>
+>        Returns:
+>            dict: <Response of Start Job Request in dict Format>
+    
+Following attributes can be used in a job object:
+    
+| Field | Type | Required | Description |
+| :---- | :--- | :------- | :---------- |
+| taskId | String | Required if taskName or taskFederatedId is not included.	 | Task or linear taskflow ID. Use taskId or taskName in the URI. You can include this task ID when the task is located in the Default folder. |
+| taskFederatedId | String | Required if the task is not located in the Default folder.	 | Task ID that includes the folder path to the task.|
+| taskName | String | Required if taskId or taskFederatedId is not included.	 | Task or linear taskflow name. Use taskId or taskName in the URI. |
+| taskType | String | Yes | The type of task. For Data Integration, use one of the following codes: <ul id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_UL_2EC6F787429E47F697CE577C0307A55D" class="ul"><div  style="display: inline;"><li id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_LI_B42714E58A3A4B6484E5DB485E8CEF3E" class="li"><div  style="display: inline;">DMASK. <span id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_GUID-F12B4328-19E2-41EA-A975-074745CC6499" class="ph"><div  style="display: inline;">Masking</div></span> task.</div></li><li id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_LI_2D5775B53454440E9055CEE735602FDC" class="li"><div  style="display: inline;">DRS. <span id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_GUID-B271E0CE-C5DF-4BD5-B4E2-91DECA6AD473" class="ph"><div  style="display: inline;">Replication</div></span> task. </div></li><li id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_LI_3A4ED3B184B449CF962D6BCBA4FA50E3" class="li"><div  style="display: inline;">DSS. <span id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_GUID-4F5449FC-921D-4B4F-A4F3-9DA99E04CF69" class="ph"><div  style="display: inline;">Synchronization</div></span> task. </div></li><li id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_LI_9C399E74CCDF46B8A7446373F26148E2" class="li"><div  style="display: inline;">MTT. <span id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_GUID-5EC4F8FA-F7FB-4E80-AC30-49BFDFC078C4" class="ph"><div  style="display: inline;">Mapping</div></span> task. </div></li><li id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_LI_8D3D898A82D54871A3A4251350B00C44" class="li"><div  style="display: inline;">PCS. PowerCenter task.</div></li><li id="GUID-A9741EE3-2A05-4A09-903E-4132CCFF3AEA_LI_747994FA877C40DA84896E9E97988D19" class="li"><div  style="display: inline;">WORKFLOW. Linear taskflow. </div></li></div></ul>  |
+| callbackURL | String | - | A valid, publicly available URL. The service posts the job status to the callbackURL. |
+    
 
-## About
-
-This is a template for a simple but elegant docs site built on _Docsify_ which magically turns your markdown in your `docs` directory into a docs site. 
-
-This is a statically-built site - just commit and push and your Github Pages site will re-deploy.
-
-_Docsify.js_ runs as a _Single-Page Application_ on `index.html` - it relies on JavaScript to pull in content from markdown file, within the app shell. This gives a modern progressive web-app experience for instant page loads. But, this **not** SEO-friendly as crawlers don't like to or can't load JavaScript. So use a static site instead if you need to be found on search engines.
-
-If you want learn about _Docsify_ and how to customize a docs like this, follow this tutorial:
-
-[![teach me - DocsifyJS tutorial](https://img.shields.io/badge/teach_me-DocsifyJS_tutorial-2ea44f)](https://michaelcurrin.github.io/docsify-js-tutorial/#/)
-
-
-## Create a Docsify site
-> How to create your own docs site like this one
-
-Click the button below to create your own copy of this repo.
-
-<div align="center">
-    <a href="https://github.com/MichaelCurrin/docsify-js-template/generate">
-        <img src="https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge" alt="Use this template">
-    </a>
-</div>
-
-Then follow instructions in the original GitHub repo's `README.md` file to setup your own docs site like this one.
-
-<div align="center">
-    <a href="https://github.com/MichaelCurrin/docsify-js-template">
-        <img src="https://img.shields.io/static/v1?label=MichaelCurrin&message=docsify-js-template&color=blue&style=for-the-badge&logo=github" alt="MichaelCurrin - docsify-js-template">
-    </a>
-</div>
+### Example:
 
 
-## Preview
+```python
+import infapy
 
-_TODO: Complete with your content - such as a screenshot of your app or command-line usage. You can also rename Preview to Sample._
+# create infa handler
+infaHandler = infapy.connect(profile="spani")
+v2=infaHandler.v2()
+
+# Create Job Object
+Job = {
+     "@type": "job",
+     "taskName": "MT_Warning",
+     "taskType": "MTT"
+}
+
+# Perform startJob()
+JobControl=v2.jobControl()
+print(JobControl.startJob(Job))
+```
+
+    {'@type': 'job', 'taskId': '0119Y40Z00000000001S', 'taskType': 'MTT', 'runId': 22, 'taskName': 'MT_Warning', 'runInParallel': False}
+    
+
+## Function: stopJob()
+
+stopJob stops running Data Integration Jobs based on the JSON body specification.
+
+>        Args:
+>            body (dict): JSON body for POST request.
+>
+>        Returns:
+>            dict: <Response of Stop Job Request in dict Format>
+    
+Same attributes for Job Object in startJob() can be used here.
+
+### Example:
 
 
-## Installation
+```python
+import infapy
 
-_TODO: Add your instructions here or link to an installation.md page._
+# create infa handler
+infaHandler = infapy.connect(profile="spani")
+v2=infaHandler.v2()
 
+# Create Job Object
+Job = {
+     "@type": "job",
+     "taskName": "MT_Warning",
+     "taskType": "MTT"
+}
 
-## Usage
+# Perform stopJob()
+JobControl=v2.jobControl()
+print(JobControl.stopJob(Job))
+```
 
-_TODO: Add your instructions here or link to a usage.md page._
+    {'@type': 'success', 'description': 'The job was stopped by user admin021651 using the API.'}
+    

@@ -1,61 +1,98 @@
-<!-- TODO: Update with your values. -->
-<h1 id="getting-started-heading">
-  Getting Started
-</h1>
-> Starter template for a markdown-based docs site
+# infapy - The Informatica Cloud SDK for Python
 
- <!-- TODO: Update repo links and change license type if needed. -->
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/docsify-js-template.svg)](https://GitHub.com/MichaelCurrin/docsify-js-template/tags/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/MichaelCurrin/docsify-js-template/blob/master/README#license)
+[![Version][]][1]
 
-[![Made with latest Docsify](https://img.shields.io/npm/v/docsify/latest?label=docsify)](https://docsify.js.org/)
+Infapy is the Informatica Intelligent Cloud Services Software
+Development Kit (SDK) for Python, which allows Python developers to
+write software that makes use of services like Informatica CDI,
+Informatica Cloud Administrator, Informatica Cloud Monitor, Informatica
+CAI etc. You can find the latest, most up to date, documentation here at our
+[doc site][] , including a list of services that are supported.
 
+## Getting Started
 
-<!-- TODO: You can delete the About and Create a Docsify site sections if you create a new project from this template -->
+``` sh
+$ pip install infapy
+```
 
-## About
+### Using Infapy
 
-This is a template for a simple but elegant docs site built on _Docsify_ which magically turns your markdown in your `docs` directory into a docs site. 
+After installing infapy
 
-This is a statically-built site - just commit and push and your Github Pages site will re-deploy.
+``` python
+>>> import infapy
+>>> infapy.encrypt()
+Enter your user name: myInfaUser
+Enter your password: myInfaPasswd
+  infa_access_key_id = gAAAAABhT2AUGrFWcXKs0-hCER85DEqHZh2ClRI0xc0gjOtFcWi_1esa9AkZt4k58Y5r2yEVl3sUF9oezTGE1tyF2knFXUX3Og==
+  infa_secret_access_key = gAAAAABhT2AUZ70m68HbSX2Lc3Xa-VQjObWUi2wCSXTiXMtLIVapDxrfKNS5bBffu1N334jmqql7LYer_r-mcjj4EwoS8U44Xg==
+```
 
-_Docsify.js_ runs as a _Single-Page Application_ on `index.html` - it relies on JavaScript to pull in content from markdown file, within the app shell. This gives a modern progressive web-app experience for instant page loads. But, this **not** SEO-friendly as crawlers don't like to or can't load JavaScript. So use a static site instead if you need to be found on search engines.
+Next, set up credentials (in e.g. `~/.infa/credentials`):
+For Windows, set it up in C:\Users\userName\.infa\credentials
 
-If you want learn about _Docsify_ and how to customize a docs like this, follow this tutorial:
+``` ini
+[default]
+infa_access_key_id = YOUR_KEY
+infa_secret_access_key = YOUR_SECRET
 
-[![teach me - DocsifyJS tutorial](https://img.shields.io/badge/teach_me-DocsifyJS_tutorial-2ea44f)](https://michaelcurrin.github.io/docsify-js-tutorial/#/)
+[dev]
+infa_access_key_id = YOUR_KEY
+infa_secret_access_key = YOUR_SECRET
+```
 
+Then, set up a default region (in e.g. `~/.infa/config`):
+For Windows, set it up in C:\Users\userName\.infa\config
 
-## Create a Docsify site
-> How to create your own docs site like this one
+``` ini
+[default]
+region = us
 
-Click the button below to create your own copy of this repo.
+[dev]
+region = em
+```
 
-<div align="center">
-    <a href="https://github.com/MichaelCurrin/docsify-js-template/generate">
-        <img src="https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge" alt="Use this template">
-    </a>
-</div>
+Then, from a Python interpreter:
 
-Then follow instructions in the original GitHub repo's `README.md` file to setup your own docs site like this one.
+``` python
+>>> import infapy
+>>> infaHandler = infapy.connect()
+or
+>>> infaHandler = infapy.connect(profile="dev")
+>>> v3 = infaHandler.v3()
+>>> securityLogs = v3.getSecurityLogs().getSecurityLogsForLastOneDay()
+>>> print(securityLogs)
+```
 
-<div align="center">
-    <a href="https://github.com/MichaelCurrin/docsify-js-template">
-        <img src="https://img.shields.io/static/v1?label=MichaelCurrin&message=docsify-js-template&color=blue&style=for-the-badge&logo=github" alt="MichaelCurrin - docsify-js-template">
-    </a>
-</div>
+## Getting Help
 
+We use GitHub issues for tracking bugs and feature requests and might
+have limited bandwidth to address them. Please use these community
+resources for getting help:
 
-## Preview
+-   Ask a question on [Stack Overflow][] and tag it with [infapy][]
+-   If it turns out that you may have found a bug, please [open an
+    issue][]
 
-_TODO: Complete with your content - such as a screenshot of your app or command-line usage. You can also rename Preview to Sample._
+## Contributing
 
+We value feedback and contributions from our community. Whether it's a
+bug report, new feature, correction, or additional documentation, we
+welcome your issues and pull requests.
 
-## Installation
+## Maintenance and Support for SDK Major Versions
 
-_TODO: Add your instructions here or link to an installation.md page._
+Infapy was made generally available on 25-Sep-2021 and is currently in
+the full support phase of the availability life cycle.
 
+## More Resources
 
-## Usage
+-   [License][]
 
-_TODO: Add your instructions here or link to a usage.md page._
+  [Version]: https://img.shields.io/badge/infapy-v1.0.7-brightgreen
+  [1]: https://pypi.org/project/infapy/
+  [doc site]: https://infapy.github.io
+  [Stack Overflow]: https://stackoverflow.com/
+  [infapy]: https://stackoverflow.com/questions/tagged/infapy
+  [open an issue]: https://github.com/infapy/infapy/issues/new
+  [License]: https://github.com/infapy/infapy/blob/main/LICENSE
