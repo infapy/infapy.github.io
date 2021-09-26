@@ -32,7 +32,7 @@
     - [import](./myDocs/DevDocs/v3/import/index)
     - [export](./myDocs/DevDocs/v3/export/index)
     - [license](./myDocs/DevDocs/v3/license/index)
-    - [objects](./myDocs/DevDocs/v3/monitor/index)
+    - [objects](./myDocs/DevDocs/v3/objects/index)
 
 - Business Use Cases
 
