@@ -3,6 +3,8 @@
 Use the lookup resource to look up an object's ID, name, path, or type attributes.
 lookup api is used to fetch the object ID.
 
+## Fumction: lookup()
+
 >        Args:
 >            id ([str], required if path and object not provided): [description]. object id.
 >            path ([str], required if id not provided): [description]. ProjectFolder/SubFolder/mt_test
