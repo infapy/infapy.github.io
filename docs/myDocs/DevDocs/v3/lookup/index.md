@@ -3,7 +3,7 @@
 Use the lookup resource to look up an object's ID, name, path, or type attributes.
 lookup api is used to fetch the object ID.
 
-## Fumction: lookup()
+## Function: lookup()
 
 >        Args:
 >            id ([str], required if path and object not provided): [description]. object id.
