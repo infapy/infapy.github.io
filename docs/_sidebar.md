@@ -38,6 +38,6 @@
 
     - [Auto Code Migration - Export](./myDocs/DevDocs/business/export/index)
     - [Auto Code Migration - Import](./myDocs/DevDocs/business/import/index)
-    - [Triggering a MTT](./myDocs/DevDocs/business/startMTT/index)
+    - [Triggering a MTT](./myDocs/DevDocs/business/job/index)
     - [Agent Services](./myDocs/DevDocs/agentServices/index)
     
