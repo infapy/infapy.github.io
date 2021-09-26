@@ -6,8 +6,8 @@ Use the RuntimeEnvitonment for fetching the details of the Runtime Environments 
 
 getAllRuntimeEnvironments() returns the details of All the Runtime Environments
 
-    Returns:
-        List of dict: <All Runtime Environment Details in dict Format>
+>    Returns:
+>        List of dict: <All Runtime Environment Details in dict Format>
 
 ### Example:
 
@@ -31,11 +31,11 @@ print(runEnvDetails)
 
 getRuntimeEnvironmentById() returns the details of the Runtime Environment with the id passed to the function
 
-    Args:
-        runEnvId (string): Runtime Environment Id
-
-    Returns:
-        List of dict: <Runtime Environment Details in dict Format>
+>    Args:
+>        runEnvId (string): Runtime Environment Id
+>
+>    Returns:
+>        List of dict: <Runtime Environment Details in dict Format>
 
 ### Example:
 
@@ -61,11 +61,11 @@ print(runEnvDetails)
 
 getRuntimeEnvironmentByName returns the details of the Runtime Environment with the name passed to the fun
 
-        Args:
-            runEnvName (string): Runtime Environment Name
-            
-        Returns:
-            List of dict: <Runtime Environment Details in dict Format>
+>        Args:
+>            runEnvName (string): Runtime Environment Name
+>            
+>        Returns:
+>            List of dict: <Runtime Environment Details in dict Format>
 
 
 ```python
