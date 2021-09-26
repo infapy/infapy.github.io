@@ -29,7 +29,9 @@ Enter your password: myInfaPasswd
 ```
 
 Next, set up credentials (in e.g. `~/.infa/credentials`):
+
 > For Windows, set it up in C:\Users\userName\\.infa\credentials
+
 > For Linux, set it up in ~/.infa/credentials
 
 ``` ini
@@ -43,7 +45,9 @@ infa_secret_access_key = YOUR_SECRET
 ```
 
 Then, set up a default region (in e.g. `~/.infa/config`):
+
 > For Windows, set it up in C:\Users\userName\\.infa\config
+
 > For Linux, set it up in ~/.infa/
 
 ``` ini
