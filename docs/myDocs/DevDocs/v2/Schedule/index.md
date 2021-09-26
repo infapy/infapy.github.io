@@ -1,61 +1,86 @@
-<!-- TODO: Update with your values. -->
-<h1 id="getting-started-heading">
-  Getting Started
-</h1>
-> Starter template for a markdown-based docs site
+# GetSchedule
 
- <!-- TODO: Update repo links and change license type if needed. -->
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/docsify-js-template.svg)](https://GitHub.com/MichaelCurrin/docsify-js-template/tags/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/MichaelCurrin/docsify-js-template/blob/master/README#license)
+Use the GetSchedule functions to get the details about the IICS Schedules
 
-[![Made with latest Docsify](https://img.shields.io/npm/v/docsify/latest?label=docsify)](https://docsify.js.org/)
+## Function: getAllSchedules()
 
+getAllSchedule() returns the details of All the Schedules 
 
-<!-- TODO: You can delete the About and Create a Docsify site sections if you create a new project from this template -->
+>        Returns:
+>            List of dict: <All Schedules Details in dict Format>
 
-## About
-
-This is a template for a simple but elegant docs site built on _Docsify_ which magically turns your markdown in your `docs` directory into a docs site. 
-
-This is a statically-built site - just commit and push and your Github Pages site will re-deploy.
-
-_Docsify.js_ runs as a _Single-Page Application_ on `index.html` - it relies on JavaScript to pull in content from markdown file, within the app shell. This gives a modern progressive web-app experience for instant page loads. But, this **not** SEO-friendly as crawlers don't like to or can't load JavaScript. So use a static site instead if you need to be found on search engines.
-
-If you want learn about _Docsify_ and how to customize a docs like this, follow this tutorial:
-
-[![teach me - DocsifyJS tutorial](https://img.shields.io/badge/teach_me-DocsifyJS_tutorial-2ea44f)](https://michaelcurrin.github.io/docsify-js-tutorial/#/)
+### Example
 
 
-## Create a Docsify site
-> How to create your own docs site like this one
+```python
+import infapy
 
-Click the button below to create your own copy of this repo.
+#Create infa handler
+infaHandler = infapy.connect(profile="jefjames")
+v2=infaHandler.v2()
 
-<div align="center">
-    <a href="https://github.com/MichaelCurrin/docsify-js-template/generate">
-        <img src="https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge" alt="Use this template">
-    </a>
-</div>
+# Call getAllSchedules()
+allSchedulesDetails = v2.getSchedule().getAllSchedules()
+print(allSchedulesDetails)
+```
 
-Then follow instructions in the original GitHub repo's `README.md` file to setup your own docs site like this one.
+    [{'@type': 'schedule', 'id': '000QMLD0000000000002', 'orgId': '000QML', 'name': 'Every Two Hours', 'createTime': '2014-08-06T15:59:55.000Z', 'updateTime': '2014-08-06T20:42:50.000Z', 'createdBy': 'abhi.devtron@gmail.com', 'updatedBy': 'abhi.devtron@gmail.com', 'startTime': '2014-08-06T16:00:45.000Z', 'startTimeUTC': '2014-08-06T20:00:45.000Z', 'interval': 'None', 'frequency': 0, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD0000000000003', 'orgId': '000QML', 'name': '7IST', 'createTime': '2014-08-06T18:12:22.000Z', 'updateTime': '2014-09-22T17:15:18.000Z', 'createdBy': 'abhi.devtron@gmail.com', 'updatedBy': 'abhi.devtron@gmail.com', 'startTime': '2014-09-20T10:10:45.000Z', 'startTimeUTC': '2014-09-20T14:10:45.000Z', 'interval': 'None', 'frequency': 0, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD0000000000004', 'orgId': '000QML', 'name': 'every 5 mins', 'createTime': '2014-08-28T10:58:06.000Z', 'updateTime': '2020-10-20T06:26:12.000Z', 'createdBy': 'abhi.devtron@gmail.com', 'updatedBy': 'jeffline', 'startTime': '2019-06-20T02:00:45.000Z', 'endTime': '2020-10-20T06:30:45.000Z', 'startTimeUTC': '2019-06-20T06:00:45.000Z', 'endTimeUTC': '2020-10-20T10:30:45.000Z', 'interval': 'Minutely', 'frequency': 5, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD0000000000005', 'orgId': '000QML', 'name': 'sudeep_schedule_5', 'createTime': '2018-08-16T06:30:24.000Z', 'updateTime': '2018-10-04T10:41:51.000Z', 'createdBy': 'sudeep@app.com', 'updatedBy': 'sudeep@app.com', 'startTime': '2018-08-16T07:00:45.000Z', 'startTimeUTC': '2018-08-16T11:00:45.000Z', 'interval': 'None', 'frequency': 0, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD0000000000006', 'orgId': '000QML', 'name': 'TEst scheule', 'createTime': '2018-10-13T19:12:04.000Z', 'updateTime': '2018-10-13T19:12:04.000Z', 'createdBy': 'sudeep@app.com', 'updatedBy': 'sudeep@app.com', 'startTime': '2018-10-13T19:30:45.000Z', 'startTimeUTC': '2018-10-13T23:30:45.000Z', 'interval': 'None', 'frequency': 0, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD0000000000007', 'orgId': '000QML', 'name': 'JJ_10min', 'createTime': '2020-03-30T07:52:09.000Z', 'updateTime': '2021-02-11T08:27:32.000Z', 'createdBy': 'Jeffline', 'updatedBy': 'jeffline', 'startTime': '2021-02-11T08:30:45.000Z', 'startTimeUTC': '2021-02-11T13:30:45.000Z', 'interval': 'Minutely', 'frequency': 10, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD0000000000008', 'orgId': '000QML', 'name': 'MI_FILE_LISTENER_10376', 'description': 'This schedule is used as File Listener trigger and must not be modified or used for other purpose', 'createTime': '2020-07-31T02:39:05.000Z', 'updateTime': '2020-07-31T02:41:19.000Z', 'startTime': '2020-07-30T14:30:00.000Z', 'endTime': '2020-08-01T14:25:00.000Z', 'startTimeUTC': '2020-07-30T18:30:00.000Z', 'endTimeUTC': '2020-08-01T18:25:00.000Z', 'interval': 'Daily', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD0000000000009', 'orgId': '000QML', 'name': 'MI_FILE_LISTENER_10377', 'description': 'This schedule is used as File Listener trigger and must not be modified or used for other purpose', 'createTime': '2020-07-31T10:50:55.000Z', 'updateTime': '2020-08-07T01:42:35.000Z', 'startTime': '2020-08-06T14:30:00.000Z', 'endTime': '2020-08-08T14:25:00.000Z', 'startTimeUTC': '2020-08-06T18:30:00.000Z', 'endTimeUTC': '2020-08-08T18:25:00.000Z', 'interval': 'Daily', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000A', 'orgId': '000QML', 'name': 'MI_FILE_LISTENER_10479', 'description': 'This schedule is used as File Listener trigger and must not be modified or used for other purpose', 'createTime': '2020-09-17T06:34:44.000Z', 'updateTime': '2020-09-17T06:35:47.000Z', 'startTime': '2020-09-06T03:00:00.000Z', 'endTime': '2020-09-07T02:55:00.000Z', 'startTimeUTC': '2020-09-06T07:00:00.000Z', 'endTimeUTC': '2020-09-07T06:55:00.000Z', 'interval': 'Daily', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD000000000000B', 'orgId': '000QML', 'name': 'vnr_delete', 'createTime': '2020-10-09T04:01:17.000Z', 'updateTime': '2020-10-09T04:01:17.000Z', 'createdBy': 'vnr_repro', 'updatedBy': 'vnr_repro', 'startTime': '2020-10-09T04:30:45.000Z', 'startTimeUTC': '2020-10-09T08:30:45.000Z', 'interval': 'Minutely', 'frequency': 5, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD000000000000C', 'orgId': '000QML', 'name': 'Monday_DRS_fulll_load', 'createTime': '2020-10-29T08:57:40.000Z', 'updateTime': '2020-10-29T08:57:40.000Z', 'createdBy': 'repro_user', 'updatedBy': 'repro_user', 'startTime': '2020-10-28T21:00:45.000Z', 'startTimeUTC': '2020-10-29T01:00:45.000Z', 'interval': 'Weekly', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': True, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000D', 'orgId': '000QML', 'name': 'DRS_incremental_load', 'createTime': '2020-10-29T08:58:23.000Z', 'updateTime': '2020-10-29T08:58:23.000Z', 'createdBy': 'repro_user', 'updatedBy': 'repro_user', 'startTime': '2020-10-28T21:00:45.000Z', 'startTimeUTC': '2020-10-29T01:00:45.000Z', 'interval': 'Weekly', 'frequency': 1, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000E', 'orgId': '000QML', 'name': 'MI_FILE_LISTENER_10544', 'description': 'This schedule is used as File Listener trigger and must not be modified or used for other purpose', 'createTime': '2020-11-02T00:52:06.000Z', 'updateTime': '2020-11-02T00:52:06.000Z', 'createdBy': 'repro_user', 'updatedBy': 'repro_user', 'startTime': '2020-10-25T00:00:00.000Z', 'startTimeUTC': '2020-10-25T04:00:00.000Z', 'interval': 'Daily', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'America/New_York'}, {'@type': 'schedule', 'id': '000QMLD000000000000F', 'orgId': '000QML', 'name': 'every_one_hr', 'createTime': '2021-01-12T01:44:46.000Z', 'updateTime': '2021-01-12T01:44:46.000Z', 'createdBy': 'infa_nishita', 'updatedBy': 'infa_nishita', 'startTime': '2021-01-12T01:50:45.000Z', 'endTime': '2021-01-12T22:00:45.000Z', 'startTimeUTC': '2021-01-12T06:50:45.000Z', 'endTimeUTC': '2021-01-13T03:00:45.000Z', 'interval': 'Hourly', 'frequency': 1, 'mon': False, 'tue': True, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000H', 'orgId': '000QML', 'name': 'snr_schedule', 'createTime': '2021-01-12T04:23:04.000Z', 'updateTime': '2021-01-12T04:23:04.000Z', 'createdBy': 'infa_nishita', 'updatedBy': 'infa_nishita', 'startTime': '2021-01-12T04:30:45.000Z', 'endTime': '2021-01-13T05:00:45.000Z', 'startTimeUTC': '2021-01-12T09:30:45.000Z', 'endTimeUTC': '2021-01-13T10:00:45.000Z', 'interval': 'Minutely', 'frequency': 5, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD000000000000I', 'orgId': '000QML', 'name': 'MI_FILE_LISTENER_10585', 'description': 'This schedule is used as File Listener trigger and must not be modified or used for other purpose', 'createTime': '2021-01-19T09:07:49.000Z', 'updateTime': '2021-01-20T00:55:50.000Z', 'startTime': '2021-01-18T13:30:00.000Z', 'endTime': '2021-01-22T13:25:00.000Z', 'startTimeUTC': '2021-01-18T18:30:00.000Z', 'endTimeUTC': '2021-01-22T18:25:00.000Z', 'interval': 'Daily', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000J', 'orgId': '000QML', 'name': 'MI_FILE_LISTENER_10587', 'description': 'This schedule is used as File Listener trigger and must not be modified or used for other purpose', 'createTime': '2021-01-20T01:35:59.000Z', 'updateTime': '2021-02-16T02:58:27.000Z', 'startTime': '2021-01-19T03:00:00.000Z', 'endTime': '2021-01-23T02:55:00.000Z', 'startTimeUTC': '2021-01-19T08:00:00.000Z', 'endTimeUTC': '2021-01-23T07:55:00.000Z', 'interval': 'Daily', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD000000000000K', 'orgId': '000QML', 'name': 'MI_FILE_LISTENER_10591', 'description': 'This schedule is used as File Listener trigger and must not be modified or used for other purpose', 'createTime': '2021-01-25T01:10:13.000Z', 'updateTime': '2021-01-28T06:13:23.000Z', 'startTime': '2021-01-24T03:00:00.000Z', 'endTime': '2021-01-29T02:55:00.000Z', 'startTimeUTC': '2021-01-24T08:00:00.000Z', 'endTimeUTC': '2021-01-29T07:55:00.000Z', 'interval': 'Daily', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD000000000000L', 'orgId': '000QML', 'name': 'sn_test_02994914', 'createTime': '2021-02-04T08:30:19.000Z', 'updateTime': '2021-02-12T06:59:28.000Z', 'createdBy': 'repro_user', 'updatedBy': 'repro_user', 'startTime': '2021-02-03T22:55:45.000Z', 'startTimeUTC': '2021-02-04T03:55:45.000Z', 'interval': 'None', 'frequency': 0, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000M', 'orgId': '000QML', 'name': 'SCH_RR', 'createTime': '2021-02-09T06:32:13.000Z', 'updateTime': '2021-08-26T03:47:10.000Z', 'createdBy': 'reshma_test', 'updatedBy': 'repro_user', 'startTime': '2021-02-08T18:40:45.000Z', 'startTimeUTC': '2021-02-08T23:40:45.000Z', 'interval': 'Monthly', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 25, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000N', 'orgId': '000QML', 'name': 'pv_30min', 'description': 'repeats for every half an  hour', 'createTime': '2021-02-16T05:10:49.000Z', 'updateTime': '2021-05-19T03:56:33.000Z', 'createdBy': 'infa_nishita', 'updatedBy': 'repro_user', 'startTime': '2021-05-18T15:30:45.000Z', 'startTimeUTC': '2021-05-18T19:30:45.000Z', 'interval': 'Minutely', 'frequency': 30, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000O', 'orgId': '000QML', 'name': 'snr_5min', 'createTime': '2021-05-03T01:30:20.000Z', 'updateTime': '2021-05-03T01:30:20.000Z', 'createdBy': 'infa_nishita', 'updatedBy': 'infa_nishita', 'startTime': '2021-05-03T01:30:45.000Z', 'startTimeUTC': '2021-05-03T05:30:45.000Z', 'interval': 'Minutely', 'frequency': 5, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD000000000000P', 'orgId': '000QML', 'name': '5min rerun', 'description': '', 'createTime': '2021-05-04T02:19:03.000Z', 'updateTime': '2021-05-04T02:19:03.000Z', 'createdBy': 'infa_nishita', 'updatedBy': 'infa_nishita', 'startTime': '2021-05-04T02:20:00.000Z', 'startTimeUTC': '2021-05-04T06:20:00.000Z', 'interval': 'Minutely', 'frequency': 5, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 2, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD000000000000Q', 'orgId': '000QML', 'name': 'RR_5MIN', 'description': '', 'createTime': '2021-06-08T03:04:33.000Z', 'updateTime': '2021-06-08T03:04:33.000Z', 'createdBy': 'repro_user', 'updatedBy': 'repro_user', 'startTime': '2021-06-08T03:05:00.000Z', 'startTimeUTC': '2021-06-08T07:05:00.000Z', 'interval': 'Minutely', 'frequency': 5, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 2, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000R', 'orgId': '000QML', 'name': 'tcp_mct_task', 'description': '', 'createTime': '2021-06-30T04:58:55.000Z', 'updateTime': '2021-06-30T04:58:55.000Z', 'createdBy': 'repro_user', 'updatedBy': 'repro_user', 'startTime': '2021-06-30T05:00:00.000Z', 'startTimeUTC': '2021-06-30T09:00:00.000Z', 'interval': 'Hourly', 'frequency': 1, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 2, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD000000000000S', 'orgId': '000QML', 'name': 'tcp_mct_test_schedlue', 'description': '', 'createTime': '2021-06-30T05:01:04.000Z', 'updateTime': '2021-06-30T05:01:04.000Z', 'createdBy': 'repro_user', 'updatedBy': 'repro_user', 'startTime': '2021-06-30T05:00:00.000Z', 'startTimeUTC': '2021-06-30T09:00:00.000Z', 'interval': 'Hourly', 'frequency': 1, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 2, 'timeZoneId': 'America/Los_Angeles'}, {'@type': 'schedule', 'id': '000QMLD000000000000T', 'orgId': '000QML', 'name': 'RR_15min', 'createTime': '2021-08-19T07:59:24.000Z', 'updateTime': '2021-08-19T07:59:24.000Z', 'createdBy': 'repro_user', 'updatedBy': 'repro_user', 'startTime': '2021-08-18T19:30:45.000Z', 'startTimeUTC': '2021-08-18T23:30:45.000Z', 'interval': 'Minutely', 'frequency': 15, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}, {'@type': 'schedule', 'id': '000QMLD000000000000U', 'orgId': '000QML', 'name': 'MI_FILE_LISTENER_10840', 'description': 'This schedule is used as File Listener trigger and must not be modified or used for other purpose', 'createTime': '2021-09-23T22:58:17.000Z', 'updateTime': '2021-09-23T22:58:17.000Z', 'createdBy': 'infa_nishita', 'updatedBy': 'infa_nishita', 'startTime': '2020-10-14T09:00:00.000Z', 'startTimeUTC': '2020-10-14T13:00:00.000Z', 'interval': 'Daily', 'frequency': 1, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'AET'}]
+    
 
-<div align="center">
-    <a href="https://github.com/MichaelCurrin/docsify-js-template">
-        <img src="https://img.shields.io/static/v1?label=MichaelCurrin&message=docsify-js-template&color=blue&style=for-the-badge&logo=github" alt="MichaelCurrin - docsify-js-template">
-    </a>
-</div>
+## Function: getAllSchedules()
 
+getScheduleById() returns the details of the Schedule with the Id passed to the function
 
-## Preview
+>        Args:
+>            scheduleId (string): Schedule Id
+>
+>        Returns:
+>            List of dict: <Schedule Details in dict Format>
 
-_TODO: Complete with your content - such as a screenshot of your app or command-line usage. You can also rename Preview to Sample._
-
-
-## Installation
-
-_TODO: Add your instructions here or link to an installation.md page._
+### Example
 
 
-## Usage
+```python
+import infapy
 
-_TODO: Add your instructions here or link to a usage.md page._
+#Create infa handler
+infaHandler = infapy.connect(profile="jefjames")
+v2=infaHandler.v2()
+
+# Call getAllSchedules()
+scheduleId = "000QMLD0000000000002"
+scheduleDetails = v2.getSchedule().getScheduleById(scheduleId)
+print(scheduleDetails)
+```
+
+    {'@type': 'schedule', 'id': '000QMLD0000000000002', 'orgId': '000QML', 'name': 'Every Two Hours', 'createTime': '2014-08-06T15:59:55.000Z', 'updateTime': '2014-08-06T20:42:50.000Z', 'createdBy': 'abhi.devtron@gmail.com', 'updatedBy': 'abhi.devtron@gmail.com', 'startTime': '2014-08-06T16:00:45.000Z', 'startTimeUTC': '2014-08-06T20:00:45.000Z', 'interval': 'None', 'frequency': 0, 'mon': False, 'tue': False, 'wed': False, 'thu': False, 'fri': False, 'sat': False, 'sun': False, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'America/Los_Angeles'}
+    
+
+## Function: getScheduleByName()
+
+getScheduleByName() returns the details of the Schedule with the name passed to the function
+
+>        Args:
+>            scheduleName (string): Schedule Name
+>
+>        Returns:
+>            List of dict: <Schedule Details in dict Format>
+
+### Example
+
+
+```python
+import infapy
+
+#Create infa handler
+infaHandler = infapy.connect(profile="jefjames")
+v2=infaHandler.v2()
+
+#Call getScheduleByName()
+scheduleName = "every 5 mins"
+scheduleDetails = v2.getSchedule().getScheduleByName(scheduleName)
+print(scheduleDetails)
+```
+
+    {'@type': 'schedule', 'id': '000QMLD0000000000004', 'orgId': '000QML', 'name': 'every 5 mins', 'createTime': '2014-08-28T10:58:06.000Z', 'updateTime': '2020-10-20T06:26:12.000Z', 'createdBy': 'abhi.devtron@gmail.com', 'updatedBy': 'jeffline', 'startTime': '2019-06-20T02:00:45.000Z', 'endTime': '2020-10-20T06:30:45.000Z', 'startTimeUTC': '2019-06-20T06:00:45.000Z', 'endTimeUTC': '2020-10-20T10:30:45.000Z', 'interval': 'Minutely', 'frequency': 5, 'mon': True, 'tue': True, 'wed': True, 'thu': True, 'fri': True, 'sat': True, 'sun': True, 'weekDay': False, 'dayOfMonth': 0, 'timeZoneId': 'IST'}
+    
