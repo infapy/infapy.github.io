@@ -77,7 +77,7 @@ Job = {
      "taskType": "MTT"
 }
 
-# Perform startJob()
+# Perform stopJob()
 JobControl=v2.jobControl()
 print(JobControl.stopJob(Job))
 ```
