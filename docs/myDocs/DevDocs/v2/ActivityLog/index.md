@@ -9,7 +9,7 @@ getAllAcitivityLog() returns all the activity logs from IICS in dict format.
 >        Returns:
 >            List of dict: <Activity Log in dict Format>
 
-### Example
+### Example:
 
 
 ```python
@@ -37,7 +37,7 @@ getActivityLogById() returns activity logs as specified by the log id provided i
 >        Returns:
 >            dict: <Activity Log in dict Format>
 
-### Example
+### Example:
 
 
 ```python
@@ -71,7 +71,7 @@ If no query parameters are passed, it gives same result as getAllAcitivityLog().
 >        Returns:
 >            List of dict: <Activity Log in dict Format>
 
-### Example
+### Example:
 
 
 ```python
