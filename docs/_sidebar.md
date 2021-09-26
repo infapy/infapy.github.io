@@ -36,7 +36,8 @@
 
 - Business Use Cases
 
-    - [Auto Code Migration](./myDocs/DevDocs/business/autoCodeMigration/index)
+    - [Auto Code Migration - Export](./myDocs/DevDocs/business/export/index)
+    - [Auto Code Migration - Import](./myDocs/DevDocs/business/import/index)
     - [Triggering a MTT](./myDocs/DevDocs/business/startMTT/index)
     - [Agent Services](./myDocs/DevDocs/agentServices/index)
     
