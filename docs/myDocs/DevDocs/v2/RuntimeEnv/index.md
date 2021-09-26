@@ -84,8 +84,3 @@ print(runEnvDetails)
     Runtime Environment Details:
     {'@type': 'runtimeEnvironment', 'id': '000QML25000000000023', 'orgId': '000QML', 'name': '1_EM08', 'createTime': '2019-06-28T05:47:35.000Z', 'updateTime': '2020-09-25T04:07:03.000Z', 'createdBy': 'admin', 'updatedBy': 'repro_user', 'agents': [{'@type': 'agent', 'id': '000QML0800000000001U', 'orgId': '000QML', 'name': 'EM08', 'createTime': '2019-06-28T05:47:34.000Z', 'updateTime': '2021-08-20T07:05:22.000Z', 'createdBy': 'admin', 'updatedBy': 'repro_user', 'active': False, 'readyToRun': False, 'platform': 'win64', 'agentHost': 'EM08', 'serverUrl': 'https://na2.dm-us.informaticacloud.com/saas', 'proxyPort': 0, 'agentVersion': '60.04', 'upgradeStatus': 'NotUpgrading', 'spiUrl': 'https://paku.rt.informaticacloud.com/activevos', 'federatedId': '8uxbwP76wmWfo1UjFgSAUW', 'lastUpgraded': '2021-07-11T10:42:08.000Z', 'lastUpgradeCheck': '2021-08-19T10:48:15.000Z', 'lastStatusChange': '2021-08-19T11:10:05.000Z', 'packages': [], 'agentConfigs': [], 'configUpdateTime': '2019-10-18T12:41:51.000Z', 'createTimeUTC': '2019-06-28T09:47:34.000Z', 'updateTimeUTC': '2021-08-20T11:05:22.000Z', 'agentGroupId': '000QML25000000000023'}], 'isShared': True, 'federatedId': '7ATAnHZ9jXQllMW1Qo6BG2', 'createTimeUTC': '2019-06-28T09:47:35.000Z', 'updateTimeUTC': '2020-09-25T08:07:03.000Z', 'serverlessConfig': {'cloudProviderConfig': {'cloudConfig': []}}}
     
-
-
-```python
-
-```
