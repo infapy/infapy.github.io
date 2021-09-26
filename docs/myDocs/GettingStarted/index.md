@@ -44,7 +44,7 @@ infa_secret_access_key = YOUR_SECRET
 
 Then, set up a default region (in e.g. `~/.infa/config`):<br>
 > For Windows, set it up in C:\Users\userName\\.infa\config<br>
-> For Linux, set it up in ~/.infa/<br>
+> For Linux, set it up in ~/.infa/config<br>
 
 ``` ini
 [default]
