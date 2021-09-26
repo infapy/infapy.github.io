@@ -2,7 +2,8 @@
 
 Use this resource with the export resource to migrate objects from one organization to another.
 
-# Prerequisite - Need to get the source and target object ids
+## Prerequisite
+### Need to get the source and target object ids
 
 When we are performing an import operation, we need to map the source connection with the target connection, similartly map the source runtime environment with the target runtime env. As a first step, we need to get the object ids of the source dependant objects and the target dependant objects.
 
