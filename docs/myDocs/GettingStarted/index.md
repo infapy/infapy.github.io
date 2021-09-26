@@ -28,11 +28,9 @@ Enter your password: myInfaPasswd
   infa_secret_access_key = gAAAAABhT2AUZ70m68HbSX2Lc3Xa-VQjObWUi2wCSXTiXMtLIVapDxrfKNS5bBffu1N334jmqql7LYer_r-mcjj4EwoS8U44Xg==
 ```
 
-Next, set up credentials (in e.g. `~/.infa/credentials`):
-
-> For Windows, set it up in C:\Users\userName\\.infa\credentials
-
-> For Linux, set it up in ~/.infa/credentials
+Next, set up credentials (in e.g. `~/.infa/credentials`):<br>
+> For Windows, set it up in C:\Users\userName\\.infa\credentials<br>
+> For Linux, set it up in ~/.infa/credentials<br>
 
 ``` ini
 [default]
@@ -44,11 +42,9 @@ infa_access_key_id = YOUR_KEY
 infa_secret_access_key = YOUR_SECRET
 ```
 
-Then, set up a default region (in e.g. `~/.infa/config`):
-
-> For Windows, set it up in C:\Users\userName\\.infa\config
-
-> For Linux, set it up in ~/.infa/
+Then, set up a default region (in e.g. `~/.infa/config`):<br>
+> For Windows, set it up in C:\Users\userName\\.infa\config<br>
+> For Linux, set it up in ~/.infa/<br>
 
 ``` ini
 [default]
