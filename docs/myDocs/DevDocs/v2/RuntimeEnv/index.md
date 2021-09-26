@@ -1,6 +1,6 @@
 # GetRuntimeEnvironment
 
-Use the RuntimeEnvitonment for fetching the details of the Runtime Environments from IICS. You can get information of all the RuntimeEnvironments or for any select Runtime Environment.
+Use the GetRuntimeEnvitonment Functions to fetch the details of the Runtime Environments from IICS. You can get information of all the RuntimeEnvironments or for any select Runtime Environment.
 
 ## Function: getAllRuntimeEnvironments()
 
