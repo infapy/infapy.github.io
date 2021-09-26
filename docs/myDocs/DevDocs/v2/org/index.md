@@ -65,3 +65,22 @@ getSubOrgDetailsByName() returns the details of the Sub Organization with the na
 >
 >        Returns:
 >            List of dict: <Sub Organization Details in dict Format>
+
+### Example
+
+
+```python
+import infapy
+
+#Create infa handler
+infaHandler = infapy.connect(profile="jefjames")
+v2=infaHandler.v2()
+
+#Call getSubOrgDetailsByName()
+subOrgName = orgDetails[0]["subOrgs"][0]["name"]
+subOrgDetails= v2.org().getSubOrgDetailsByName(subOrgName)
+print(subOrgDetails)
+```
+
+    {'@type': 'org', 'id': '012BZ4', 'orgId': '012BZ4', 'name': 'Cloud Intern 2021', 'description': '', 'createTime': '2020-09-17T02:46:07.000Z', 'updateTime': '2020-09-17T02:46:07.000Z', 'createdBy': 'kkararia@informatica.com', 'updatedBy': 'kkararia@informatica.com', 'address1': '', 'address2': '', 'address3': '', 'employees': '0_10', 'city': '', 'country': 'US', 'state': '', 'zipcode': '', 'successEmails': '', 'warningEmails': '', 'errorEmails': '', 'spiUrl': 'https://paku.rt.informaticacloud.com/activevos', 'devOrg': False, 'timezone': 'America/Los_Angeles', 'maxLogRows': 100, 'minPasswordLength': 9, 'minPasswordCharMix': 3, 'passwordReuseInDays': 90, 'passwordExpirationInDays': 180, 'subOrgLimit': 0, 'restApiSessionLimit': 0, 'parentOrgId': '80bTjaasFejbEkQynNFnyT', 'subOrgs': [], 'twoFactorAuthentication': False, 'orgUUID': '2XMVRXUwIQmfd3zQWD9Xmd', 'ipAddressRanges': []}
+    
