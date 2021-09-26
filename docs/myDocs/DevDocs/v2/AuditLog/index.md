@@ -1,61 +1,33 @@
-<!-- TODO: Update with your values. -->
-<h1 id="getting-started-heading">
-  Getting Started
-</h1>
-> Starter template for a markdown-based docs site
+# AuditLog
 
- <!-- TODO: Update repo links and change license type if needed. -->
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/docsify-js-template.svg)](https://GitHub.com/MichaelCurrin/docsify-js-template/tags/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/MichaelCurrin/docsify-js-template/blob/master/README#license)
+Use AuditLog resource to request entries from the audit log.
 
-[![Made with latest Docsify](https://img.shields.io/npm/v/docsify/latest?label=docsify)](https://docsify.js.org/)
+## Function: getAuditLogs()
 
+getAuditLogs() returns audit logs for the org based on the batchId and batchSize specified.
 
-<!-- TODO: You can delete the About and Create a Docsify site sections if you create a new project from this template -->
+>        Args:
+>            batchId (str, optional): Id to identify the batch number. Starts with 0. Defaults to "0", since 
+>                                     this is the default in IICS.
+>            batchSize (str, optional): Size of Batch. Defaults to "200", since this is default in IICS.
+>
+>        Returns:
+>            List of dict: <Audit Logs in dict Format>
 
-## About
-
-This is a template for a simple but elegant docs site built on _Docsify_ which magically turns your markdown in your `docs` directory into a docs site. 
-
-This is a statically-built site - just commit and push and your Github Pages site will re-deploy.
-
-_Docsify.js_ runs as a _Single-Page Application_ on `index.html` - it relies on JavaScript to pull in content from markdown file, within the app shell. This gives a modern progressive web-app experience for instant page loads. But, this **not** SEO-friendly as crawlers don't like to or can't load JavaScript. So use a static site instead if you need to be found on search engines.
-
-If you want learn about _Docsify_ and how to customize a docs like this, follow this tutorial:
-
-[![teach me - DocsifyJS tutorial](https://img.shields.io/badge/teach_me-DocsifyJS_tutorial-2ea44f)](https://michaelcurrin.github.io/docsify-js-tutorial/#/)
+### Example:
 
 
-## Create a Docsify site
-> How to create your own docs site like this one
+```python
+import infapy
 
-Click the button below to create your own copy of this repo.
+# create infa handler
+infaHandler = infapy.connect(profile="spani")
+v2=infaHandler.v2()
 
-<div align="center">
-    <a href="https://github.com/MichaelCurrin/docsify-js-template/generate">
-        <img src="https://img.shields.io/badge/Generate-Use_this_template-2ea44f?style=for-the-badge" alt="Use this template">
-    </a>
-</div>
+# Perform getAuditLog()
+AuditLog=v2.getAuditLog()
+print(AuditLog.getAuditLogs("3","30"))
+```
 
-Then follow instructions in the original GitHub repo's `README.md` file to setup your own docs site like this one.
-
-<div align="center">
-    <a href="https://github.com/MichaelCurrin/docsify-js-template">
-        <img src="https://img.shields.io/static/v1?label=MichaelCurrin&message=docsify-js-template&color=blue&style=for-the-badge&logo=github" alt="MichaelCurrin - docsify-js-template">
-    </a>
-</div>
-
-
-## Preview
-
-_TODO: Complete with your content - such as a screenshot of your app or command-line usage. You can also rename Preview to Sample._
-
-
-## Installation
-
-_TODO: Add your instructions here or link to an installation.md page._
-
-
-## Usage
-
-_TODO: Add your instructions here or link to a usage.md page._
+    [{'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EX', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:39:40.000Z', 'objectId': '7gtDoxjagKHhVBbovuBSic', 'objectName': 'MappingTask7', 'category': 'MCT', 'event': 'UPDATE', 'eventParam': 'UPDATE MCT Successful.', 'message': 'aevent.MCT.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EW', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:39:17.000Z', 'objectId': 'aVA3P8ettCAgygNFh4JX4W', 'objectName': 'rhat0007', 'category': 'SAAS_RUNTIME_ENVIRONMENT', 'event': 'UPDATE', 'eventParam': 'UPDATE SAAS_RUNTIME_ENVIRONMENT Successful.', 'message': 'aevent.SAAS_RUNTIME_ENVIRONMENT.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EV', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:38:51.000Z', 'objectId': '3ivQ4qGUp1kf4SFOr00eGc', 'objectName': 'spanirhel_GRP', 'category': 'SAAS_RUNTIME_ENVIRONMENT', 'event': 'UPDATE', 'eventParam': 'UPDATE SAAS_RUNTIME_ENVIRONMENT Successful.', 'message': 'aevent.SAAS_RUNTIME_ENVIRONMENT.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EU', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:30:13.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003ET', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:30:11.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003ES', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:30:09.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003ER', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:27:56.000Z', 'objectId': '7gtDoxjagKHhVBbovuBSic', 'objectName': 'MappingTask7', 'category': 'MCT', 'event': 'CREATE', 'eventParam': 'CREATE MCT Successful.', 'message': 'aevent.MCT.CREATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EQ', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:27:21.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EP', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:27:20.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EO', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:26:37.000Z', 'objectId': '4480kLykKCwkqmlVl4MoUl', 'objectName': 'MappingTask2', 'category': 'MCT', 'event': 'CREATE', 'eventParam': 'CREATE MCT Successful.', 'message': 'aevent.MCT.CREATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EN', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:25:54.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EM', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:25:53.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EL', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:25:32.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EK', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:25:31.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EJ', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:25:29.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EI', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:17:42.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EH', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:17:41.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EG', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:17:01.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EF', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:17:00.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EE', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:16:58.000Z', 'objectId': '1R2v1kIPr8MfIatAaD7gMI', 'objectName': 'RR_03190675', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003ED', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T06:11:34.000Z', 'objectId': 'iwiuj5RmqEzjh5q1p9VzKL', 'objectName': 'RR_03190675', 'category': 'MCT', 'event': 'UPDATE', 'eventParam': 'UPDATE MCT Successful.', 'message': 'aevent.MCT.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EC', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T05:42:45.000Z', 'objectId': '', 'objectName': '', 'category': 'MIGRATE', 'event': 'EXPORT', 'eventParam': 'END', 'message': 'Migration Ended. Object Export ended.'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EB', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T05:42:43.000Z', 'objectId': '', 'objectName': '', 'category': 'MIGRATE', 'event': 'EXPORT', 'eventParam': 'START', 'message': 'Migration Started. Object Export started.'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003E9', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T04:08:20.000Z', 'objectId': '', 'objectName': '', 'category': 'MIGRATE', 'event': 'EXPORT', 'eventParam': 'START', 'message': 'Migration Started. Object Export started.'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003EA', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T04:08:20.000Z', 'objectId': '', 'objectName': '', 'category': 'MIGRATE', 'event': 'EXPORT', 'eventParam': 'END', 'message': 'Migration Ended. Object Export ended.'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003E7', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T03:14:50.000Z', 'objectId': '-1', 'objectName': 'LT-Warning', 'category': 'WORKFLOW', 'event': 'CREATE', 'eventParam': '', 'message': 'Linear Taskflow LT-Warning was created.'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003E8', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T03:14:50.000Z', 'objectId': '60PQ3RJCXDhl2WzHNWxlwW', 'objectName': 'LT-Warning', 'category': 'SAAS_LINEAR_TASKFLOW', 'event': 'CREATE', 'eventParam': 'CREATE SAAS_LINEAR_TASKFLOW Successful.', 'message': 'aevent.SAAS_LINEAR_TASKFLOW.CREATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003E6', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T03:11:27.000Z', 'objectId': '8aA3LJ2OM7fkgCNryvrpCf', 'objectName': 'MT_Warning', 'category': 'MCT', 'event': 'UPDATE', 'eventParam': 'UPDATE MCT Successful.', 'message': 'aevent.MCT.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003E5', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T03:10:24.000Z', 'objectId': '56HAtjb6MiRdimAkgtawc4', 'objectName': 'M-FTR', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}, {'@type': 'auditLogEntry', 'version': 0, 'id': '9dMjYg78QCpewd7iS939IzD00000000003E4', 'orgId': '0119Y4', 'username': 'admin021651', 'entryTime': '2021-09-23T03:10:23.000Z', 'objectId': '56HAtjb6MiRdimAkgtawc4', 'objectName': 'M-FTR', 'category': 'MAPPING', 'event': 'UPDATE', 'eventParam': 'UPDATE MAPPING Successful.', 'message': 'aevent.MAPPING.UPDATE'}]
+    
