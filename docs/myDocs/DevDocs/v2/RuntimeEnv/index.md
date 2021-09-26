@@ -59,7 +59,7 @@ print(runEnvDetails)
 
 ## Function: getRuntimeEnvironmentById()
 
-getRuntimeEnvironmentByName returns the details of the Runtime Environment with the name passed to the fun
+getRuntimeEnvironmentByName returns the details of the Runtime Environment with the name passed to the function
 
 >        Args:
 >            runEnvName (string): Runtime Environment Name
